@@ -1,0 +1,12 @@
+.section-wrapper {
+  max-width: $mobile-width;
+  margin: 0 auto;
+
+  @media (min-width: $tablet-width) {
+    max-width: $tablet-width;
+  }
+
+  @media (min-width: $desktop-width) {
+    max-width: $desktop-width;
+  }
+}
