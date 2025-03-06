@@ -2,3 +2,16 @@
 // ---------------------------------
 
 @import "vendor/normalize";
+@import "vendor/swiper.scss";
+
+@import "./common/variables.scss";
+@import "./common/mixins.scss";
+@import "./common/fonts.scss";
+@import "./common/global.scss";
+@import "./common/visually-hidden.scss";
+@import "./common/section-wrapper.scss";
+
+@import "./blocks/page.scss";
+@import "./blocks/button.scss";
+@import "./blocks/hero.scss";
+@import "./blocks/logo.scss";
