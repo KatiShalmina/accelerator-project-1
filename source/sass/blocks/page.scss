@@ -4,6 +4,7 @@
 
 .page__body {
   @include primary-font;
+
   display: flex;
   flex-direction: column;
   min-width: 320px;
@@ -11,6 +12,7 @@
   margin: 0;
   font-size: 14px;
   line-height: 22px;
+  color: $color-base;
 }
 
 .page__body main {

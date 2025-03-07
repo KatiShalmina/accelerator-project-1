@@ -2,16 +2,23 @@
 // ---------------------------------
 
 @import "vendor/normalize";
-@import "vendor/swiper.scss";
-
-@import "./common/variables.scss";
-@import "./common/mixins.scss";
-@import "./common/fonts.scss";
-@import "./common/global.scss";
-@import "./common/visually-hidden.scss";
-@import "./common/section-wrapper.scss";
-
-@import "./blocks/page.scss";
-@import "./blocks/button.scss";
-@import "./blocks/hero.scss";
-@import "./blocks/logo.scss";
+@import "./common/variables";
+@import "./common/mixins";
+@import "./common/fonts";
+@import "./common/global";
+@import "./common/utils";
+@import "./common/section-wrapper";
+@import "./blocks/page";
+@import "./blocks/button";
+@import "./blocks/hero";
+@import "./blocks/logo";
+@import "./blocks/about";
+@import "./blocks/video";
+@import "./blocks/price";
+@import "./blocks/tabs";
+@import "./blocks/card";
+@import "./blocks/games";
+@import "./blocks/banner";
+@import "./blocks/jury";
+@import "./blocks/slider-jury";
+@import "./blocks/advantages";

@@ -1,0 +1,49 @@
+.card {
+  position: relative;
+  min-height: 384px;
+  padding: 50px 42px;
+  background-color: $bg-base;
+}
+
+.card__title {
+  margin: 0 0 18px;
+  font-size: 22px;
+  line-height: 22px;
+}
+
+.card__data {
+  margin: 0 0 72px;
+}
+
+.card__price {
+  @include primary-700;
+
+  display: block;
+  margin: 0 0 0 37px;
+  font-size: 48px;
+  line-height: 150%;
+  color: $color-secondary;
+  text-align: left;
+}
+
+.card__price::before {
+  content: attr(data-price);
+  position: absolute;
+  top: 135px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 80px;
+  line-height: 150%;
+  color: #e8e8e8;
+  opacity: 48%;
+}
+
+.tabs__card-list[data-period="6"] .card__price::before,
+.tabs__card-list[data-period="12"] .card__price::before {
+  left: 50px;
+  transform: none;
+}
+
+.card__button {
+  margin-top: 18px;
+}

@@ -1,5 +1,6 @@
 .button {
   @include primary-700;
+
   display: block;
   padding: 22px 0;
   font-size: 12px;
@@ -9,4 +10,9 @@
   background-color: transparent;
   border: 2px solid $bg-base;
   cursor: pointer;
+}
+
+.button--primary {
+  color: $color-base;
+  border-color: $color-base;
 }

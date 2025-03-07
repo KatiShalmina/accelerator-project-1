@@ -17,6 +17,7 @@
 
 .hero__phone {
   @include primary-700;
+
   font-size: 22px;
   line-height: 22px;
   color: $color-primary;
@@ -31,6 +32,7 @@
 
 .hero__location {
   @include secondary-font;
+
   grid-column: 2 / 3;
   grid-row: 1 / 2;
   margin: 0 0 14px;
@@ -40,6 +42,7 @@
 
 .hero__title {
   @include secondary-800;
+
   grid-column: 2 / 3;
   grid-row: 2 / 3;
   margin: 0 0 48px;
@@ -51,6 +54,7 @@
 .hero__list {
   @include reset-list;
   @include primary-400;
+
   grid-column: 1 / 2;
   grid-row: 2 / 3;
   align-self: end;

@@ -1,0 +1,12 @@
+.jury__wrapper {
+  padding: 40px 30px;
+  text-align: center;
+}
+
+.jury__title {
+  @include secondary-font;
+
+  margin: 0 0 20px;
+  font-size: 32px;
+  line-height: 32px;
+}

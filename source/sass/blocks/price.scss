@@ -1,0 +1,16 @@
+.price {
+  text-align: center;
+  background-color: $bg-secondary;
+}
+
+.price__wrapper {
+  padding: 40px 15px;
+}
+
+.price__title {
+  @include secondary-font;
+
+  margin: 0 0 20px;
+  font-size: 32px;
+  line-height: 32px;
+}
