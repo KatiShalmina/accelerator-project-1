@@ -1,0 +1,26 @@
+.slider-jury__slide {
+  position: relative;
+  color: $color-primary;
+  background-color: $bg-primary;
+}
+
+.slider-jury__title {
+  display: none;
+
+  @media (min-width: $tablet-width) {
+    @include primary-400;
+
+    position: absolute;
+    display: block;
+    left: 50%;
+    bottom: 25px;
+    transform: translateX(-50%);
+    margin: 0;
+    font-size: 22px;
+    line-height: 22px;
+  }
+}
+
+.slider-jury__slide img {
+  display: block;
+}

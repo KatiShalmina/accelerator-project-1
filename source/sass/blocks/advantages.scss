@@ -1,0 +1,80 @@
+.advantages {
+  background-color: $bg-secondary;
+}
+
+.advantages__wrapper {
+  padding: 40px 15px 5px;
+  text-align: center;
+}
+
+.advantages__title {
+  @include secondary-font;
+
+  margin: 0 0 40px;
+  font-size: 32px;
+  line-height: 32px;
+}
+
+.advantages__amount span {
+  @include primary-700;
+
+  font-size: 64px;
+  line-height: 64px;
+  background: $text-gradient;
+  background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.advantages__amount-of-what {
+  margin: 0 0 12px;
+}
+
+.advantages__amount-of-what span {
+  @include primary-400;
+
+  line-height: 20px;
+  color: #2e35ac;
+}
+
+.advantages__unit {
+  padding: 0 0 35px;
+
+  h3 {
+    @include primary-400;
+
+    margin: 0 0 12px;
+    font-size: 18px;
+    line-height: 20px;
+  }
+
+  p {
+    width: 230px;
+    margin: 0 auto;
+  }
+}
+
+.advantages__unit--highlight {
+  margin: 0 0 40px;
+  padding: 30px 0 40px;
+  color: $color-primary;
+  background-color: $bg-primary;
+
+  h3 {
+    @include primary-700;
+
+    margin: 0 0 20px;
+  }
+}
+
+.advantages__amount--highlight {
+  margin: 0 0 5px;
+}
+
+.advantages__amount--highlight span {
+  background: unset;
+  background-clip: unset;
+  background-clip: unset;
+  -webkit-text-fill-color: unset;
+  color: inherit;
+}

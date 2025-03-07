@@ -1,24 +1,20 @@
 @include font-face("Alumni Sans", 600,
-  url("../../fonts/alumni-sans-600.woff2") format("woff2"),
-  url("../../fonts/alumni-sans-600.woff") format("woff")
+url("../../fonts/alumni-sans-600.woff2") format("woff2"),
+url("../../fonts/alumni-sans-600.woff") format("woff")
 );
-
 @include font-face("Alumni Sans", 800,
-  url("../../fonts/alumni-sans-800.woff2") format("woff2"),
-  url("../../fonts/alumni-sans-800.woff") format("woff")
+url("../../fonts/alumni-sans-800.woff2") format("woff2"),
+url("../../fonts/alumni-sans-800.woff") format("woff")
 );
-
 @include font-face("Roboto Condensed", 300,
-  url("../../fonts/roboto-condensed-300.woff2") format("woff2"),
-  url("../../fonts/roboto-condensed-300.woff") format("woff")
+url("../../fonts/roboto-condensed-300.woff2") format("woff2"),
+url("../../fonts/roboto-condensed-300.woff") format("woff")
 );
-
 @include font-face("Roboto Condensed", 400,
-  url("../../fonts/roboto-condensed-regular.woff2") format("woff2"),
-  url("../../fonts/roboto-condensed-regular.woff") format("woff")
+url("../../fonts/roboto-condensed-regular.woff2") format("woff2"),
+url("../../fonts/roboto-condensed-regular.woff") format("woff")
 );
-
 @include font-face("Roboto Condensed", 700,
-  url("../../fonts/roboto-condensed-700.woff2") format("woff2"),
-  url("../../fonts/roboto-condensed-700.woff") format("woff")
+url("../../fonts/roboto-condensed-700.woff2") format("woff2"),
+url("../../fonts/roboto-condensed-700.woff") format("woff")
 );

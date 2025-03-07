@@ -1,0 +1,35 @@
+.about__wrapper {
+  padding: 40px 0;
+}
+
+.about__text-wrapper {
+  padding: 0 15px 32px;
+}
+
+.about__title {
+  @include secondary-font;
+
+  margin: 0 0 12px;
+  font-size: 32px;
+  line-height: 32px;
+}
+
+.about__subtitle {
+  @include primary-400;
+
+  margin: 0 0 32px;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.about__description p {
+  margin: 4px 0;
+}
+
+.about__photo {
+  margin: 0 0 36px;
+}
+
+.about__photo img {
+  display: block;
+}
