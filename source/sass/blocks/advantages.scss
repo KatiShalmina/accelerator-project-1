@@ -22,7 +22,6 @@
   line-height: 64px;
   background: $text-gradient;
   background-clip: text;
-  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -55,10 +54,11 @@
 }
 
 .advantages__unit--highlight {
-  margin: 0 0 40px;
-  padding: 30px 0 40px;
+  margin: 0 -15px 40px;
+  padding: 30px 15px 40px;
   color: $color-primary;
   background-color: $bg-primary;
+  overflow: hidden;
 
   h3 {
     @include primary-700;
@@ -73,7 +73,6 @@
 
 .advantages__amount--highlight span {
   background: unset;
-  background-clip: unset;
   background-clip: unset;
   -webkit-text-fill-color: unset;
   color: inherit;

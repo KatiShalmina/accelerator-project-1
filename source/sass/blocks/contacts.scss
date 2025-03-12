@@ -1,0 +1,39 @@
+.contacts__wrapper {
+  padding: 40px 15px 12px;
+}
+
+.contacts__title {
+  @include secondary-font;
+
+  margin: 0 0 42px;
+  font-size: 32px;
+  line-height: 32px;
+}
+
+.contacts__unit-title {
+  @include primary-400;
+
+  margin: 0 0 12px;
+  font-size: 20px;
+  line-height: 20px;
+}
+
+.contacts__adress,
+.contacts__data {
+  @include primary-400;
+
+  margin: 0 0 28px;
+  line-height: 20px;
+  font-style: normal;
+}
+
+.contacts__phone,
+.contacts__email {
+  @include primary-400;
+
+  display: block;
+  margin: 0 0 28px;
+  line-height: 20px;
+  color: $color-base;
+  text-decoration: none;
+}

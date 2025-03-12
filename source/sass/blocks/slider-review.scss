@@ -1,0 +1,20 @@
+.slider-review__slide {
+  padding: 30px 25px;
+  color: $color-primary;
+  background-color: $bg-primary;
+  box-shadow: 0 0 40px 0 rgba(28, 51, 116, 0.2);
+
+  img {
+    display: block;
+    margin: 0 auto 10px;
+    border-radius: 50%;
+  }
+
+  h3 {
+    @include primary-400;
+
+    margin: 0 0 16px;
+    font-size: 18px;
+    line-height: 20px;
+  }
+}

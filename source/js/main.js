@@ -7,6 +7,10 @@ const scrollButton = document.querySelector('.hero__button');
 const priceSection = document.querySelector('.price');
 const tabButtons = document.querySelectorAll('.tabs__button');
 const cardLists = document.querySelectorAll('.tabs__card-list');
+const accordionTabs = document.querySelectorAll('.faq__tab-button');
+const accordionLists = document.querySelectorAll('.faq__accordion-list');
+const accordionItems = document.querySelectorAll('.faq__accordion-item');
+const accordionState = {};
 
 // scrollButton
 scrollButton.addEventListener('click', () => {
@@ -58,13 +62,25 @@ document.querySelectorAll('.card__price').forEach((price) => {
 });
 
 // accordion
-document.faq__accordion.querySelectorAll('button').forEach((button) => {
-  button.addEventListener('click', () => {
-    const answer = button.nextElementSibling; // Получаем следующий элемент (ответ)
-    const isOpen = button.getAttribute('aria-expanded') === 'true';
+accordionTabs.forEach((tab) => {
+  tab.addEventListener('click', () => {
+    const selectedTab = tab.dataset.tab;
 
-    // скрываем
-    button.setAttribute('aria-expanded', !isOpen);
-    answer.classList.toggle('active');
+    accordionTabs.forEach((btn) => btn.classList.toggle('faq__tab-button--active', btn === tab));
+
+    accordionLists.forEach((list) => {
+      list.classList.toggle('hidden', list.dataset.tab !== selectedTab);
+    });
+  });
+});
+
+// no-hover
+accordionTabs.forEach((tab) => {
+  tab.addEventListener('click', () => {
+    tab.classList.add('no-hover');
+
+    setTimeout(() => {
+      tab.classList.remove('no-hover');
+    }, 1000);
   });
 });

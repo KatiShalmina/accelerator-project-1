@@ -2,17 +2,122 @@
   @include primary-700;
 
   display: block;
-  padding: 22px 0;
+  padding: 20px 10px;
   font-size: 12px;
   line-height: 12px;
   color: $color-primary;
   text-transform: uppercase;
+  text-decoration: none;
   background-color: transparent;
   border: 2px solid $bg-base;
   cursor: pointer;
+  transition:
+    color 0.4s ease,
+    background-color 0.4s ease;
+
+  &:hover {
+    color: $color-secondary;
+    background-color: $bg-base;
+  }
+
+  &:focus-visible {
+    color: $color-secondary;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+
+  &:active {
+    color: $color-base;
+    background-color: $bg-base;
+  }
+
+  &:disabled {
+    color: rgba(255, 255, 255, 0.5);
+    border-color: rgba(255, 255, 255, 0.5);
+    pointer-events: none;
+  }
 }
 
 .button--primary {
   color: $color-base;
   border-color: $color-base;
+  transition:
+    color 0.4s ease,
+    border 0.4s ease,
+    background-color 0.4s ease;
+
+  &:hover {
+    color: $color-primary;
+    background-color: #003eb7;
+    background-image: linear-gradient(97.05deg, #ed0233 17.6%, #003eb7 95.31%);
+    border: none;
+  }
+
+  &:focus-visible {
+    color: $color-primary;
+    background-color: #003eb7;
+    background-image: linear-gradient(97.05deg, rgba(237, 2, 51, 0.8) 17.6%, rgba(0, 62, 183, 0.8) 95.31%);
+  }
+
+  &:active {
+    color: rgba(255, 255, 255, 0.7);
+    background-color: #003eb7;
+    background-image: linear-gradient(97.05deg, #ed0233 17.6%, #003eb7 95.31%);
+    border: none;
+  }
+
+  &:disabled {
+    color: rgba(16, 38, 84, 0.3);
+    background-color: $bg-base;
+    border-color: rgba(16, 38, 84, 0.3);
+    pointer-events: none;
+  }
+}
+
+.button--secondary {
+  @include primary-400;
+
+  width: 140px;
+  padding: 15px 10px;
+  font-size: 16px;
+  line-height: 16px;
+  text-transform: none;
+  color: $color-base;
+  border: 1px solid rgba(16, 38, 84, 0.2);
+  transition:
+    color 0.4s ease,
+    border 0.4s ease;
+
+  &:hover,
+  &:focus-visible {
+    color: $color-base;
+    background-color: transparent;
+    border-color: $color-base;
+  }
+
+  &:active {
+    color: $color-primary;
+    background-color: $bg-primary;
+    background-image: linear-gradient(97.05deg, #ed0233 17.6%, #003eb7 95.31%);
+    border: none;
+  }
+
+  &:disabled {
+    color: #c8c9cc;
+    border-color: rgba(16, 38, 84, 0.2);
+    pointer-events: none;
+  }
+}
+
+.faq__tab-button--active {
+  color: $color-primary;
+  background-color: $bg-primary;
+  background-image: linear-gradient(97.05deg, #ed0233 17.6%, #003eb7 95.31%);
+  border: none;
+}
+
+.button--secondary.no-hover:hover {
+  color: $color-primary;
+  background-color: $bg-primary;
+  background-image: linear-gradient(97.05deg, #ed0233 17.6%, #003eb7 95.31%);
+  border: none;
 }

@@ -3,6 +3,14 @@
   min-height: 384px;
   padding: 50px 42px;
   background-color: $bg-base;
+  transition: border 0.4s ease;
+
+  &:hover,
+  &:focus-visible {
+    border: 7px solid transparent;
+    border-image: $button-gradient;
+    border-image-slice: 1;
+  }
 }
 
 .card__title {
