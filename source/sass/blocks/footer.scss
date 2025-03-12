@@ -1,0 +1,52 @@
+.footer {
+  color: $color-primary;
+  background-color: #030a1a;
+}
+
+.footer__wrapper {
+  padding: 40px 15px;
+}
+
+.footer__logo {
+  margin: 0 0 30px;
+}
+
+.footer__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 35px;
+  margin: 0 0 30px;
+}
+
+.footer__nav-link {
+  @include primary-400;
+
+  position: relative;
+  color: $color-primary;
+  text-decoration: none;
+
+  &:focus-visible {
+    outline: 1px solid $bg-base;
+    outline-offset: 5px;
+  }
+
+  &:hover::after {
+    background-color: $bg-base;
+  }
+
+  &:disabled {
+    opacity: 0.3;
+  }
+}
+
+.footer__nav-link::after {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -5px;
+  display: block;
+  content: "";
+  height: 1px;
+  background-color: transparent;
+  transition: background-color 0.4s ease;
+}

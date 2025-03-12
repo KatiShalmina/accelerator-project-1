@@ -22,13 +22,71 @@
   transform: translate(-50%, -50%);
   width: 52px;
   height: 52px;
-  padding: 10px;
+  padding: 0;
   background-color: #003eb7;
   background-image: linear-gradient(97.05deg, #ed0233 17.6%, #003eb7 95.31%);
   border: none;
   border-radius: 50%;
+  outline: 2px solid rgba(237, 2, 51, 0.3);
+  outline-offset: 9px;
   cursor: pointer;
-  overflow: hidden;
+  transition:
+    background-color 0.4s ease,
+    width 0.2s ease,
+    heght 0.2s ease,
+    outline-offset 0.4s ease,
+    outline-color 0.4s ease;
+
+  &:hover {
+    background-image: none;
+    background-color: $bg-base;
+    outline-color: rgba(16, 38, 84, 0.6);
+  }
+
+  &:focus-visible {
+    background-image: none;
+    background-color: #c8c9cc;
+    outline-color: $color-base;
+  }
+
+  &:active {
+    width: 41px;
+    height: 41px;
+    background-image: none;
+    transform-origin: center;
+    outline-color: $color-base;
+    outline-offset: 14px;
+  }
+
+  &:disabled {
+    background-image: none;
+    background-color: rgba(255, 255, 255, 0.4);
+    outline-color: rgba(16, 38, 84, 0.4);
+    pointer-events: none;
+  }
+
+  &::after {
+    display: block;
+    content: "";
+    width: 52px;
+    height: 52px;
+    background-color: $bg-base;
+    mask: url("/__spritemap#sprite-video-icon-view") center / 12px 12px no-repeat;
+    transition: background-color 0.4s ease;
+  }
+
+  &:hover::after {
+    background-color: rgba(16, 38, 84, 0.6);
+  }
+
+  &:focus-visible::after,
+  &:active::after {
+    background-color: $color-base;
+  }
+
+  &:disabled::after {
+    background-color: rgba(16, 38, 84, 0.4);
+  }
 }
 
 .video__container {

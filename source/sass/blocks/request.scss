@@ -1,0 +1,70 @@
+.request {
+  color: $color-primary;
+  background-color: $color-base;
+}
+
+.request__wrapper {
+  padding: 70px 15px;
+}
+
+.request__title {
+  @include secondary-font;
+
+  margin: 0 0 32px;
+  font-size: 32px;
+  line-height: 32px;
+}
+
+.request__input-wrapper {
+  margin: 0 0 36px;
+}
+
+.request__input {
+  margin: 0 0 32px;
+}
+
+.request__input input {
+  @include primary-400;
+
+  position: relative;
+  appearance: none;
+  margin: 0;
+  padding: 4px 2px;
+  border: none;
+  border-bottom: 1px solid #74819c;
+  background: none;
+  outline: none;
+  font: inherit;
+  color: inherit;
+  width: 100%;
+  cursor: pointer;
+  transition: border 0.4s ease;
+
+  &::placeholder {
+    @include primary-font;
+
+    font-size: 14px;
+    line-height: 22px;
+    color: #74819c;
+  }
+
+  &:hover {
+    border-color: $color-primary;
+  }
+
+  &:focus-visible {
+    outline: 1px solid $color-primary;
+  }
+
+  &:disabled {
+    opacity: 0.3;
+  }
+
+  &:invalid {
+    border-color: #ff121f;
+  }
+}
+
+.request__button {
+  width: 100%;
+}
