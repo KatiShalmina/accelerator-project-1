@@ -3,14 +3,14 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="preload" href="/fonts/roboto-condensed-300.woff2" as="font" type="font/woff2">
-  <link rel="preload" href="/fonts/roboto-condensed-300.woff" as="font" type="font/woff">
-  <link rel="preload" href="/fonts/roboto-condensed-700.woff2" as="font" type="font/woff2">
-  <link rel="preload" href="/fonts/roboto-condensed-700.woff" as="font" type="font/woff">
-  <link rel="preload" href="/fonts/alumni-sans-600.woff2" as="font" type="font/woff2">
-  <link rel="preload" href="/fonts/alumni-sans-600.woff" as="font" type="font/woff">
-  <link rel="preload" href="/fonts/alumni-sans-800.woff2" as="font" type="font/woff2">
-  <link rel="preload" href="/fonts/alumni-sans-800.woff" as="font" type="font/woff">
+  <link rel="preload" href="/fonts/roboto-condensed-300.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/fonts/roboto-condensed-300.woff" as="font" type="font/woff" crossorigin="anonymous">
+  <link rel="preload" href="/fonts/roboto-condensed-700.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/fonts/roboto-condensed-700.woff" as="font" type="font/woff" crossorigin="anonymous">
+  <link rel="preload" href="/fonts/alumni-sans-600.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/fonts/alumni-sans-600.woff" as="font" type="font/woff" crossorigin="anonymous">
+  <link rel="preload" href="/fonts/alumni-sans-800.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/fonts/alumni-sans-800.woff" as="font" type="font/woff" crossorigin="anonymous">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SUPERGYM</title>
   <link rel="stylesheet" href="sass/style.scss">
@@ -107,39 +107,69 @@
             <li class="tabs__card card" data-type="coach" tabindex="0">
               <h3 class="card__title">С тренером</h3>
               <p class="card__data">12 занятий</p>
-              <span class="card__price" data-price="5000">5000</span>
+              <span class="card__price" data-price="5000">5000
+                <svg width="24" height="33" aria-hidden="true">
+                  <use href="/__spritemap#sprite-ruble"></use>
+                </svg>
+              </span>
+              <span class="visually-hidden">Рублей.</span>
               <a class="card__button button button--primary" href="#">Купить абонемент</a>
             </li>
             <li class="tabs__card card" data-type="daytime" tabindex="0">
               <h3 class="card__title">Дневной</h3>
               <p class="card__data">с 8:00 до 17:00</p>
-              <span class="card__price" data-price="1700">1700</span>
+              <span class="card__price" data-price="1700">1700
+                <svg width="24" height="33" aria-hidden="true">
+                  <use href="/__spritemap#sprite-ruble"></use>
+                </svg>
+              </span>
+              <span class="visually-hidden">Рублей.</span>
               <a class="card__button button button--primary" href="#">Купить абонемент</a>
             </li>
             <li class="tabs__card card" data-type="full" tabindex="0">
               <h3 class="card__title">Полный день</h3>
               <p class="card__data">с 8:00 до 22:00</p>
-              <span class="card__price" data-price="2700">2700</span>
+              <span class="card__price" data-price="2700">2700
+                <svg width="24" height="33" aria-hidden="true">
+                  <use href="/__spritemap#sprite-ruble"></use>
+                </svg>
+              </span>
+              <span class="visually-hidden">Рублей.</span>
               <a class="card__button button button--primary" href="#">Купить абонемент</a>
             </li>
           </ul>
           <ul class="tabs__card-list" data-period="6">
-            <li class="price__card card hidden" data-type="coach" tabindex="0">
+            <li class="tabs__card card hidden" data-type="coach" tabindex="0">
               <h3 class="card__title">С тренером</h3>
               <p class="card__data">72 занятия</p>
-              <span class="card__price" data-price="30 000">30 000</span>
+              <span class="card__price" data-price="30 000">30 000
+                <svg width="24" height="33" aria-hidden="true">
+                  <use href="/__spritemap#sprite-ruble"></use>
+                </svg>
+              </span>
+              <span class="visually-hidden">Рублей.</span>
               <a class="card__button button button--primary" href="#">Купить абонемент</a>
             </li>
             <li class="tabs__card card hidden" data-type="daytime" tabindex="0">
               <h3 class="card__title">Дневной</h3>
               <p class="card__data">с 8:00 до 17:00</p>
-              <span class="card__price" data-price="10 200">10 200</span>
+              <span class="card__price" data-price="10 200">10 200
+                <svg width="24" height="33" aria-hidden="true">
+                  <use href="/__spritemap#sprite-ruble"></use>
+                </svg>
+              </span>
+              <span class="visually-hidden">Рублей.</span>
               <a class="card__button button button--primary" href="#">Купить абонемент</a>
             </li>
             <li class="tabs__card card hidden" data-type="full" tabindex="0">
               <h3 class="card__title">Полный день</h3>
               <p class="card__data">с 8:00 до 22:00</p>
-              <span class="card__price" data-price="16 200">16 200</span>
+              <span class="card__price" data-price="16 200">16 200
+                <svg width="24" height="33" aria-hidden="true">
+                  <use href="/__spritemap#sprite-ruble"></use>
+                </svg>
+              </span>
+              <span class="visually-hidden">Рублей.</span>
               <a class="card__button button button--primary" href="#">Купить абонемент</a>
             </li>
           </ul>
@@ -147,19 +177,34 @@
             <li class="tabs__card card hidden" data-type="coach" tabindex="0">
               <h3 class="card__title">С тренером</h3>
               <p class="card__data">144 занятия</p>
-              <span class="card__price" data-price="60 000">60 000</span>
+              <span class="card__price" data-price="60 000">60 000
+                <svg width="24" height="33" aria-hidden="true">
+                  <use href="/__spritemap#sprite-ruble"></use>
+                </svg>
+              </span>
+              <span class="visually-hidden">Рублей.</span>
               <a class="card__button button button--primary" href="#">Купить абонемент</a>
             </li>
             <li class="tabs__card card hidden" data-type="daytime" tabindex="0">
               <h3 class="card__title">Дневной</h3>
               <p class="card__data">с 8:00 до 17:00</p>
-              <span class="card__price" data-price="20 400">20 400</span>
+              <span class="card__price" data-price="20 400">20 400
+                <svg width="24" height="33" aria-hidden="true">
+                  <use href="/__spritemap#sprite-ruble"></use>
+                </svg>
+              </span>
+              <span class="visually-hidden">Рублей.</span>
               <a class="card__button button button--primary" href="#">Купить абонемент</a>
             </li>
             <li class="tabs__card card hidden" data-type="full" tabindex="0">
               <h3 class="card__title">Полный день</h3>
               <p class="card__data">с 8:00 до 22:00</p>
-              <span class="card__price" data-price="32 400">32 400</span>
+              <span class="card__price" data-price="32 400">32 400
+                <svg width="24" height="33" aria-hidden="true">
+                  <use href="/__spritemap#sprite-ruble"></use>
+                </svg>
+              </span>
+              <span class="visually-hidden">Рублей.</span>
               <a class="card__button button button--primary" href="#">Купить абонемент</a>
             </li>
           </ul>
@@ -280,60 +325,86 @@
               </picture>
             </div>
           </div>
-          <div class="slider-jury__button-prev"></div>
-          <div class="slider-jury__button-next"></div>
+          <div class="slider-jury__button slider-jury__button--prev">
+            <svg width="16" height="32" aria-hidden="true">
+              <use href="/__spritemap#sprite-slider-prev-button"></use>
+            </svg>
+          </div>
+          <div class="slider-jury__button slider-jury__button--next">
+            <svg width="16" height="32" aria-hidden="true">
+              <use href="/__spritemap#sprite-slider-next-button"></use>
+            </svg>
+          </div>
         </div>
       </div>
     </section>
     <section class="advantages" data-test="features">
       <div class="advantages__wrapper section-wrapper">
         <h2 class="advantages__title">Наши преимущества</h2>
-        <div class="advantages__unit">
-          <div class="advantages__amount">
-            <span>900</span>
+        <div class="advantages__unit-wrapper">
+          <div class="advantages__unit">
+            <div class="advantages__amount-wrapper">
+              <div class="advantages__amount">
+                <span>900</span>
+              </div>
+              <div class="advantages__amount-of-what">
+                <span>кв/м</span>
+              </div>
+            </div>
+            <div class="advantages__text-wrapper">
+              <h3>Площадь</h3>
+              <p>Занимайтесь без очередей и толкучки</p>
+            </div>
           </div>
-          <div class="advantages__amount-of-what">
-            <span>кв/м</span>
+          <div class="advantages__unit">
+            <div class="advantages__amount-wrapper">
+              <div class="advantages__amount">
+                <span>70</span>
+              </div>
+              <div class="advantages__amount-of-what">
+                <span>машин</span>
+              </div>
+            </div>
+            <div class="advantages__text-wrapper">
+              <h3>Собственная парковка</h3>
+              <p>Вы всегда найдёте место для своей машины на нашей парковке</p>
+            </div>
           </div>
-          <h3>Площадь</h3>
-          <p>Занимайтесь без очередей и толкучки</p>
-        </div>
-        <div class="advantages__unit">
-          <div class="advantages__amount">
-            <span>70</span>
+          <div class="advantages__unit advantages__unit--highlight">
+            <div class="advantages__amount advantages__amount--highlight">
+              <span>100</span>
+            </div>
+            <h3>Тренажёров</h3>
+            <p>Современные тренажёры на все группы мышц</p>
           </div>
-          <div class="advantages__amount-of-what">
-            <span>машин</span>
+          <div class="advantages__unit">
+            <div class="advantages__amount-wrapper">
+              <div class="advantages__amount">
+                <span>350</span>
+              </div>
+              <div class="advantages__amount-of-what">
+                <span>мест</span>
+              </div>
+            </div>
+            <div class="advantages__text-wrapper">
+              <h3>Комфорт</h3>
+              <p>Просторные раздевалки, душевые, фен, Wi-Fi, кулеры</p>
+            </div>
           </div>
-          <h3>Собственная парковка</h3>
-          <p>Вы всегда найдёте место для своей машины на нашей парковке</p>
-        </div>
-        <div class="advantages__unit advantages__unit--highlight">
-          <div class="advantages__amount advantages__amount--highlight">
-            <span>100</span>
+          <div class="advantages__unit">
+            <div class="advantages__amount-wrapper">
+              <div class="advantages__amount">
+                <span>5+</span>
+              </div>
+              <div class="advantages__amount-of-what">
+                <span>лет</span>
+              </div>
+            </div>
+            <div class="advantages__text-wrapper">
+              <h3>Тренерский опыт</h3>
+              <p>Добивайтесь своих целей быстрее с профессиональным тренером</p>
+            </div>
           </div>
-          <h3>Тренажёров</h3>
-          <p>Современные тренажёры на все группы мышц</p>
-        </div>
-        <div class="advantages__unit">
-          <div class="advantages__amount">
-            <span>350</span>
-          </div>
-          <div class="advantages__amount-of-what">
-            <span>мест</span>
-          </div>
-          <h3>Комфорт</h3>
-          <p>Просторные раздевалки, душевые, фен, Wi-Fi, кулеры</p>
-        </div>
-        <div class="advantages__unit">
-          <div class="advantages__amount">
-            <span>5+</span>
-          </div>
-          <div class="advantages__amount-of-what">
-            <span>лет</span>
-          </div>
-          <h3>Тренерский опыт</h3>
-          <p>Добивайтесь своих целей быстрее с профессиональным тренером</p>
         </div>
       </div>
     </section>
@@ -341,7 +412,7 @@
       <div class="offers__wrapper section-wrapper">
         <h2 class="offers__title">Акции</h2>
         <div class="offers__unit offers__unit--highlight">
-          <div class="offers__unit-wrapper offers__unit-wrapper--highlight">
+          <div class="offers__text-wrapper offers__text-wrapper--highlight">
             <span>Год</span>
             <h3>4999</h3>
             <p>Безлимитный абонемент в тренажёрный зал</p>
@@ -363,7 +434,7 @@
               alt="Улыбающаяся молодая девушка в спортивной форме на фоне синего неба">
           </picture>
         </div>
-        <div class="offers__unit-wrapper">
+        <div class="offers__units-wrapper">
           <div class="offers__unit">
             <h3>Месяц бесплатно</h3>
             <p>Приведи друга, получи абонемент в подарок</p>
@@ -378,7 +449,7 @@
       </div>
     </section>
     <section class="faq" data-test="faq">
-      <div class="faq__wrapper">
+      <div class="faq__wrapper section-wrapper">
         <h2 class="faq__title">Вопросы и ответы</h2>
         <ul class="faq__tab-list">
           <li class="faq__tab-item">
@@ -396,9 +467,9 @@
           </li>
         </ul>
         <ul class="faq__accordion-list" data-tab="gym">
-          <li class="faq__accordion-item">
+          <li class="faq__accordion-item faq__accordion-item--open">
             <button type="button" aria-expanded="true">
-              <span>Как стать членом фитнес-центра?</span>
+              <span>Как стать членом<br> фитнес-центра?</span>
             </button>
             <p>При первом посещении и покупке абонемента, необходимо заполнить анкету и подписать договор. При покупке
               абонемента онлайн, анкета также заполняется онлайн и договор придёт вам на почту.</p>
@@ -541,7 +612,7 @@
       </div>
     </section>
     <section class="reviews" data-test="reviews">
-      <div class="reviews__wrapper">
+      <div class="reviews__wrapper section-wrapper">
         <h2 class="reviews__title">Отзывы</h2>
         <div class="reviews__slider slider-review">
           <div class="slider-review__wrapper">
@@ -554,12 +625,14 @@
 
                 <source width="80" height="80" type="image/png" media="(min-width: 768px)"
                   srcset="img/reviews-orlova-tablet@1x.png 1x, img/reviews-orlova-tablet@2x.png 2x">
-                <img src="img/reviews-orlova-mobile@1x.png"
-                  srcset="img/reviews-orlova-mobile@2x.png 2x" width="68" height="68" alt="Анна Орлова">
+                <img src="img/reviews-orlova-mobile@1x.png" srcset="img/reviews-orlova-mobile@2x.png 2x" width="68"
+                  height="68" alt="Анна Орлова">
               </picture>
-              <h3>Анна Орлова</h3>
-              <q>Хожу в Supergym уже больше года. Нравится, что в клубе всегда чисто, тренажёры обновляют, персонал
-                дружелюбный. Зал просторный, даже в вечернее время нет очередей</q>
+              <div class="slider-review__text-wrapper">
+                <h3>Анна Орлова</h3>
+                <q>Хожу в Supergym уже больше года. Нравится, что в клубе всегда чисто, тренажёры обновляют, персонал
+                  дружелюбный. Зал просторный, даже в вечернее время нет очередей</q>
+              </div>
             </div>
             <div class="slider-review__slide">
               <picture>
@@ -570,54 +643,73 @@
 
                 <source width="80" height="80" type="image/png" media="(min-width: 768px)"
                   srcset="img/reviews-orlova-tablet@1x.png 1x, img/reviews-orlova-tablet@2x.png 2x">
-                <img src="img/reviews-orlova-mobile@1x.png"
-                  srcset="img/reviews-orlova-mobile@2x.png 2x" width="68" height="68" alt="Анна Орлова">
+                <img src="img/reviews-orlova-mobile@1x.png" srcset="img/reviews-orlova-mobile@2x.png 2x" width="68"
+                  height="68" alt="Анна Орлова">
               </picture>
-              <h3>Наталья Усова</h3>
-              <q>Хожу в Supergym уже больше года. Нравится, что в клубе всегда чисто, тренажёры обновляют, персонал
-                дружелюбный. Зал просторный, даже в вечернее время нет очередей</q>
+              <div class="slider-review__text-wrapper">
+                <h3>Наталья Усова</h3>
+                <q>Хожу в Supergym уже больше года. Нравится, что в клубе всегда чисто, тренажёры обновляют, персонал
+                  дружелюбный. Зал просторный, даже в вечернее время нет очередей</q>
+              </div>
             </div>
           </div>
-          <div class="slider-review__button-prev"></div>
-          <div class="slider-review__button-next"></div>
+          <div class="slider-review__button slider-review__button--prev">
+            <svg width="16" height="32" aria-hidden="true">
+              <use href="/__spritemap#sprite-slider-prev-button"></use>
+            </svg>
+          </div>
+          <div class="slider-review__button slider-review__button--next">
+            <svg width="16" height="32" aria-hidden="true">
+              <use href="/__spritemap#sprite-slider-next-button"></use>
+            </svg>
+          </div>
         </div>
       </div>
     </section>
     <section class="request" data-test="form">
       <div class="request__wrapper section-wrapper">
         <h2 class="request__title">Бесплатное занятие</h2>
-        <form action="https://echo.htmlacademy.ru/" method="post">
-          <div class="request__input-wrapper">
-            <div class="request__input">
-              <label class="visually-hidden" for="name">Введите имя.</label>
-              <input type="text" id="name" name="user-name" pattern="[A-Za-zА-Яа-яЁё\s]+" placeholder="Имя" required>
+        <div class="request__form-wrapper">
+          <form action="https://echo.htmlacademy.ru/" method="post">
+            <div class="request__input-wrapper">
+              <div class="request__input">
+                <label class="visually-hidden" for="name">Введите имя.</label>
+                <input type="text" id="name" name="user-name" pattern="[A-Za-zА-Яа-яЁё\s]+" placeholder="Имя" required>
+              </div>
+              <div class="request__input">
+                <label class="visually-hidden" for="phone">Введите номер телефона.</label>
+                <input type="tel" id="phone" name="user-phone" pattern="\+?[0-9\s\-\(\)]+" placeholder="Телефон"
+                  required>
+              </div>
             </div>
-            <div class="request__input">
-              <label class="visually-hidden" for="phone">Введите номер телефона.</label>
-              <input type="tel" id="phone" name="user-phone" pattern="\+?[0-9\s\-\(\)]+" placeholder="Телефон" required>
-            </div>
-          </div>
-          <button class="request__button button" type="submit">Отправить</button>
-        </form>
+            <button class="request__button button" type="submit">Отправить</button>
+          </form>
+        </div>
       </div>
     </section>
     <section class="contacts">
       <div class="contacts__wrapper section-wrapper">
         <h2 class="contacts__title">Контакты</h2>
-        <h3 class="contacts__unit-title">Адрес:</h3>
-        <address class="contacts__adress">г. Омск, ул. 60 лет Октября, 7</address>
-        <h3 class="contacts__unit-title">График работы:</h3>
-        <p class="contacts__data">Пн-Вс: с 8:00 до 22:00</p>
-        <h3 class="contacts__unit-title">Телефон:</h3>
-        <a class="contacts__phone" href="tel:+78005555555">8 800 555-55-55</a>
-        <h3 class="contacts__unit-title">Email:</h3>
-        <a class="contacts__email" href="mailto:info@example.com">oмск@supergym.ru</a>
+        <div class="contacts__content-wrapper">
+          <div class="contacts__units-wrapper">
+            <h3 class="contacts__unit-title">Адрес:</h3>
+            <address class="contacts__adress">г. Омск, ул. 60 лет Октября, 7</address>
+            <h3 class="contacts__unit-title">График работы:</h3>
+            <p class="contacts__data">Пн-Вс: с 8:00 до 22:00</p>
+          </div>
+          <div class="contacts__units-wrapper">
+            <h3 class="contacts__unit-title">Телефон:</h3>
+            <a class="contacts__phone" href="tel:+78005555555">8 800 555-55-55</a>
+            <h3 class="contacts__unit-title">Email:</h3>
+            <a class="contacts__email" href="mailto:info@example.com">oмск@supergym.ru</a>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="footer" data-test="footer">
-    <div class="footer__wrapper">
+    <div class="footer__wrapper section-wrapper">
       <div class="footer__logo logo">
         <picture>
           <img src="img/logo-supergym.svg" width="100" height="20" alt="Логотип компании Supergym">
@@ -632,17 +724,32 @@
       </nav>
       <ul class="footer__social social">
         <li class="social__item">
-          <a class="social__link social__link--vk" href="https://vk.com/htmlacademy">
+          <a class="social__link" href="https://vk.com/htmlacademy">
+            <div class="social__icon social__icon--vk">
+              <svg width="13" height="10" aria-hidden="true">
+                <use href="/__spritemap#sprite-vk"></use>
+              </svg>
+            </div>
             <span class="visually-hidden">Мы ВКонтакте.</span>
           </a>
         </li>
         <li class="social__item">
-          <a class="social__link social__link--ok" href="https://vk.com/htmlacademy">
+          <a class="social__link" href="https://vk.com/htmlacademy">
+            <div class="social__icon social__icon--ok">
+              <svg width="14" height="17" aria-hidden="true">
+                <use href="/__spritemap#sprite-ok"></use>
+              </svg>
+            </div>
             <span class="visually-hidden">Мы в Одноклассниках.</span>
           </a>
         </li>
         <li class="social__item">
-          <a class="social__link social__link--reddit" href="https://vk.com/htmlacademy">
+          <a class="social__link" href="https://vk.com/htmlacademy">
+            <div class="social__icon social__icon--reddit">
+              <svg width="15" height="15" aria-hidden="true">
+                <use href="/__spritemap#sprite-reddit"></use>
+              </svg>
+            </div>
             <span class="visually-hidden">Мы в Reddit.</span>
           </a>
         </li>

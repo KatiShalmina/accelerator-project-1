@@ -2,7 +2,7 @@
   @include primary-700;
 
   display: block;
-  padding: 20px 10px;
+  padding: 22px 10px;
   font-size: 12px;
   line-height: 12px;
   color: $color-primary;
@@ -38,27 +38,38 @@
 }
 
 .button--primary {
+  padding: 25px 10px;
   color: $color-base;
   border-color: $color-base;
   transition:
     color 0.4s ease,
     border 0.4s ease,
+    padding 0.4 ease,
     background-color 0.4s ease;
 
-  &:hover {
-    color: $color-primary;
-    background-color: #003eb7;
-    background-image: linear-gradient(97.05deg, #ed0233 17.6%, #003eb7 95.31%);
-    border: none;
-  }
+  @media (min-width: $tablet-width) {
+    &:hover {
+      padding: 27px 10px;
+      color: $color-primary;
+      background-color: #003eb7;
+      background-image: linear-gradient(97.05deg, #ed0233 17.6%, #003eb7 95.31%);
+      border: none;
+    }
 
-  &:focus-visible {
-    color: $color-primary;
-    background-color: #003eb7;
-    background-image: linear-gradient(97.05deg, rgba(237, 2, 51, 0.8) 17.6%, rgba(0, 62, 183, 0.8) 95.31%);
+    &:focus-visible {
+      padding: 27px 10px;
+      color: $color-primary;
+      background-color: #003eb7;
+      background-image: linear-gradient(97.05deg, rgba(237, 2, 51, 0.8) 17.6%, rgba(0, 62, 183, 0.8) 95.31%);
+    }
+
+    &:active {
+      padding: 27px 10px;
+    }
   }
 
   &:active {
+    padding: 27px 10px;
     color: rgba(255, 255, 255, 0.7);
     background-color: #003eb7;
     background-image: linear-gradient(97.05deg, #ed0233 17.6%, #003eb7 95.31%);
@@ -77,7 +88,7 @@
   @include primary-400;
 
   width: 140px;
-  padding: 15px 10px;
+  padding: 14px 10px;
   font-size: 16px;
   line-height: 16px;
   text-transform: none;
@@ -85,6 +96,7 @@
   border: 1px solid rgba(16, 38, 84, 0.2);
   transition:
     color 0.4s ease,
+    padding 0.4 ease,
     border 0.4s ease;
 
   &:hover,
@@ -95,6 +107,7 @@
   }
 
   &:active {
+    padding: 15px 10px;
     color: $color-primary;
     background-color: $bg-primary;
     background-image: linear-gradient(97.05deg, #ed0233 17.6%, #003eb7 95.31%);
@@ -106,13 +119,12 @@
     border-color: rgba(16, 38, 84, 0.2);
     pointer-events: none;
   }
-}
 
-.faq__tab-button--active {
-  color: $color-primary;
-  background-color: $bg-primary;
-  background-image: linear-gradient(97.05deg, #ed0233 17.6%, #003eb7 95.31%);
-  border: none;
+  @media (min-width: $tablet-width) {
+    width: 162px;
+    font-size: 18px;
+    line-height: 18px;
+  }
 }
 
 .button--secondary.no-hover:hover {

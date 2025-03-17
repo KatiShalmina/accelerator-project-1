@@ -1,15 +1,19 @@
 .card {
-  position: relative;
   min-height: 384px;
   padding: 50px 42px;
   background-color: $bg-base;
   transition: border 0.4s ease;
 
-  &:hover,
-  &:focus-visible {
-    border: 7px solid transparent;
-    border-image: $button-gradient;
-    border-image-slice: 1;
+  @media (min-width: $tablet-width) {
+    min-height: 460px;
+    padding: 65px;
+
+    &:hover,
+    &:focus-visible {
+      border: 7px solid transparent;
+      border-image: $button-gradient;
+      border-image-slice: 1;
+    }
   }
 }
 
@@ -17,41 +21,97 @@
   margin: 0 0 18px;
   font-size: 22px;
   line-height: 22px;
+
+  @media (min-width: $tablet-width) {
+    margin: 0 0 22px;
+    font-size: 24px;
+    line-height: 24px;
+  }
 }
 
 .card__data {
-  margin: 0 0 72px;
+  margin: 0 0 18px;
+
+  @media (min-width: $tablet-width) {
+    margin: 0 0 22px;
+  }
 }
 
 .card__price {
   @include primary-700;
 
+  position: relative;
   display: block;
-  margin: 0 0 0 37px;
-  font-size: 48px;
+  margin: 0 auto 18px;
+  font-size: 80px;
   line-height: 150%;
-  color: $color-secondary;
-  text-align: left;
+  color: rgba(232, 232, 232, 0.48);
+
+  @media (min-width: $tablet-width) {
+    margin: 0 auto 22px;
+    font-size: 100px;
+  }
 }
 
 .card__price::before {
-  content: attr(data-price);
+  @include primary-700;
+
   position: absolute;
-  top: 135px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 80px;
+  top: 49px;
+  left: 38px;
+  content: attr(data-price);
+  font-size: 48px;
   line-height: 150%;
-  color: #e8e8e8;
-  opacity: 48%;
+  color: $color-secondary;
+
+  @media (min-width: $tablet-width) {
+    top: 60px;
+    left: 42px;
+    font-size: 60px;
+  }
+}
+
+.card svg {
+  position: absolute;
+  top: 69px;
+  right: 37px;
+
+  @media (min-width: $tablet-width) {
+    top: 84px;
+    right: 42px;
+    width: 30px;
+    height: 42px;
+  }
+}
+
+.tabs__card-list[data-period="6"] .card,
+.tabs__card-list[data-period="12"] .card {
+  padding: 50px 20px;
+
+  @media (min-width: $tablet-width) {
+    padding: 65px 20px;
+  }
 }
 
 .tabs__card-list[data-period="6"] .card__price::before,
 .tabs__card-list[data-period="12"] .card__price::before {
-  left: 50px;
-  transform: none;
+  @media (min-width: $tablet-width) {
+    left: 60px;
+  }
+}
+
+.tabs__card-list[data-period="6"] .card svg,
+.tabs__card-list[data-period="12"] .card svg {
+  @media (min-width: $tablet-width) {
+    right: 65px;
+  }
 }
 
 .card__button {
-  margin-top: 18px;
+  width: 206px;
+  margin: 0 auto;
+
+  @media (min-width: $tablet-width) {
+    width: 250px;
+  }
 }

@@ -9,8 +9,8 @@ const tabButtons = document.querySelectorAll('.tabs__button');
 const cardLists = document.querySelectorAll('.tabs__card-list');
 const accordionTabs = document.querySelectorAll('.faq__tab-button');
 const accordionLists = document.querySelectorAll('.faq__accordion-list');
+const accordions = document.querySelectorAll('.faq__accordion-item button');
 const accordionItems = document.querySelectorAll('.faq__accordion-item');
-const accordionState = {};
 
 // scrollButton
 scrollButton.addEventListener('click', () => {
@@ -61,7 +61,7 @@ document.querySelectorAll('.card__price').forEach((price) => {
   price.dataset.price = price.textContent;
 });
 
-// accordion
+// faq__tab-button
 accordionTabs.forEach((tab) => {
   tab.addEventListener('click', () => {
     const selectedTab = tab.dataset.tab;
@@ -71,16 +71,77 @@ accordionTabs.forEach((tab) => {
     accordionLists.forEach((list) => {
       list.classList.toggle('hidden', list.dataset.tab !== selectedTab);
     });
-  });
-});
 
-// no-hover
-accordionTabs.forEach((tab) => {
-  tab.addEventListener('click', () => {
     tab.classList.add('no-hover');
-
     setTimeout(() => {
       tab.classList.remove('no-hover');
     }, 1000);
   });
 });
+
+// faq__accordion-item--open
+function toggleAccordion(button) {
+  const item = button.closest('.faq__accordion-item');
+  const content = item.querySelector('p');
+
+  if (item.classList.contains('faq__accordion-item--open')) {
+    content.style.maxHeight = null;
+    item.classList.remove('faq__accordion-item--open');
+  } else {
+    content.style.maxHeight = `${content.scrollHeight }px`;
+    item.classList.add('faq__accordion-item--open');
+  }
+
+  button.setAttribute(
+    'aria-expanded',
+    item.classList.contains('faq__accordion-item--open')
+  );
+
+  saveAccordionState();
+}
+
+accordions.forEach((button) => {
+  button.addEventListener('click', () => {
+    toggleAccordion(button);
+  });
+});
+
+function saveAccordionState() {
+  const state = {};
+  accordionLists.forEach((list) => {
+    const tabName = list.dataset.tab;
+    state[tabName] = [];
+
+    const items = list.querySelectorAll('.faq__accordion-item');
+    items.forEach((item, index) => {
+      state[tabName][index] = item.classList.contains('faq__accordion-item--open');
+    });
+  });
+
+  sessionStorage.setItem('faqState', JSON.stringify(state));
+}
+
+function restoreAccordionState(tabName) {
+  const savedState = sessionStorage.getItem('faqState');
+  if (!savedState) {
+    return;
+  }
+
+  const state = JSON.parse(sessionStorage.getItem('faqState'));
+  if (!state || !state[tabName]) {
+    return;
+  }
+
+  const content = document.querySelector(`.faq__accordion-list[data-tab="${tabName}"]`);
+  if (!content) {
+    return;
+  }
+
+  content.querySelectorAll('.faq__accordion-item').forEach((item, index) => {
+    if (state[tabName][index]) {
+      item.classList.add('faq__accordion-item--open');
+    } else {
+      item.classList.remove('faq__accordion-item--open');
+    }
+  });
+}

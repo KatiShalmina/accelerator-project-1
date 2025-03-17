@@ -5,10 +5,21 @@
 
 .footer__wrapper {
   padding: 40px 15px;
+
+  @media (min-width: $tablet-width) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 45px;
+  }
 }
 
 .footer__logo {
   margin: 0 0 30px;
+
+  @media (min-width: $tablet-width) {
+    margin: 0;
+  }
 }
 
 .footer__nav {
@@ -16,6 +27,11 @@
   flex-wrap: wrap;
   gap: 20px 35px;
   margin: 0 0 30px;
+
+  @media (min-width: $tablet-width) {
+    gap: 20px 30px;
+    margin: 0;
+  }
 }
 
 .footer__nav-link {
@@ -36,6 +52,11 @@
 
   &:disabled {
     opacity: 0.3;
+  }
+
+  @media (min-width: $tablet-width) {
+    font-size: 14px;
+    line-height: 22px;
   }
 }
 

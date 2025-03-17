@@ -1,3 +1,7 @@
 .games__wrapper {
   padding: 25px 15px;
+
+  @media (min-width: $tablet-width) {
+    padding: 60px 45px;
+  }
 }

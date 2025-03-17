@@ -13,6 +13,10 @@
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+
+  @media (min-width: $tablet-width) {
+    width: 270px;
+  }
 }
 
 .video__play {
@@ -81,6 +85,7 @@
 
   &:focus-visible::after,
   &:active::after {
+    mask-position: center;
     background-color: $color-base;
   }
 
