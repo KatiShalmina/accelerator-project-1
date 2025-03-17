@@ -5,6 +5,11 @@
 
 .request__wrapper {
   padding: 70px 15px;
+
+  @media (min-width: $tablet-width) {
+    padding: 60px 45px;
+    text-align: center;
+  }
 }
 
 .request__title {
@@ -13,14 +18,37 @@
   margin: 0 0 32px;
   font-size: 32px;
   line-height: 32px;
+
+  @media (min-width: $tablet-width) {
+    font-size: 54px;
+    line-height: 54px;
+  }
+}
+
+.request__form-wrapper form {
+  @media (min-width: $tablet-width) {
+    width: 440px;
+    margin: 0 auto;
+  }
 }
 
 .request__input-wrapper {
   margin: 0 0 36px;
+
+  @media (min-width: $tablet-width) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
 }
 
 .request__input {
   margin: 0 0 32px;
+
+  @media (min-width: $tablet-width) {
+    width: 205px;
+    margin: 0;
+  }
 }
 
 .request__input input {
@@ -67,4 +95,8 @@
 
 .request__button {
   width: 100%;
+
+  @media (min-width: $tablet-width) {
+    padding: 25px 10px;
+  }
 }

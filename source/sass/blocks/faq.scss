@@ -4,6 +4,10 @@
 
 .faq__wrapper {
   padding: 70px 15px;
+
+  @media (min-width: $tablet-width) {
+    padding: 60px 45px;
+  }
 }
 
 .faq__title {
@@ -13,6 +17,12 @@
   font-size: 32px;
   line-height: 32px;
   text-align: center;
+
+  @media (min-width: $tablet-width) {
+    margin: 0 0 45px;
+    font-size: 42px;
+    line-height: 42px;
+  }
 }
 
 .faq__tab-list {
@@ -22,6 +32,18 @@
   flex-wrap: wrap;
   gap: 10px;
   margin: 0 0 35px;
+
+  @media (min-width: $tablet-width) {
+    margin: 0 0 45px;
+  }
+}
+
+.faq__tab-button--active {
+  padding: 15px 10px;
+  color: $color-primary;
+  background-color: $bg-primary;
+  background-image: linear-gradient(97.05deg, #ed0233 17.6%, #003eb7 95.31%);
+  border: none;
 }
 
 .faq__accordion-list {
@@ -39,9 +61,11 @@
 .faq__accordion-item button {
   @include primary-400;
 
+  position: relative;
   display: block;
-  margin: 0 0 20px;
-  padding: 20px 40px 0 0;
+  width: 290px;
+  margin: 20px 0;
+  padding: 0 52px 0 0;
   font-size: 20px;
   line-height: 20px;
   text-align: left;
@@ -50,21 +74,127 @@
   border: none;
   cursor: pointer;
 
-  span {
-    display: block;
-    width: 240px;
+  &:disabled {
+    opacity: 0.3;
+  }
+
+  @media (min-width: $tablet-width) {
+    width: 678px;
+    margin: 23px 0;
+    padding: 9px 60px 9px 0;
+    font-size: 22px;
+    line-height: 22px;
+    transition: color 0.4s ease;
+
+    br {
+      display: none;
+    }
+
+    &:hover,
+    &:focus-visible {
+      color: rgba(28, 51, 116, 0.7);
+    }
+
+    &:hover::before {
+      background-color: $bg-primary;
+    }
+
+    &:focus-visible::before {
+      background-color: #74819c;
+    }
+
+    &:hover::after,
+    &:focus-visible::after {
+      background-color: $bg-base;
+    }
+  }
+}
+
+.faq__accordion-item button::before {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  display: block;
+  content: "";
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border: 1px solid $bg-primary;
+  border-radius: 50%;
+
+  @media (min-width: $tablet-width) {
+    width: 40px;
+    height: 40px;
+    transition: background-color 0.4s ease;
+  }
+}
+
+.faq__accordion-item button::after {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translateY(-50%);
+  display: block;
+  content: "";
+  width: 14px;
+  height: 14px;
+  background-color: $bg-primary;
+  mask: url("/__spritemap#sprite-accordion-plus-view") center / 14px 14px no-repeat;
+
+  @media (min-width: $tablet-width) {
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    mask: url("/__spritemap#sprite-accordion-plus-view") center / 20px 20px no-repeat;
+    transition: background-color 0.4s ease;
+  }
+}
+
+.faq__accordion-item--open button::before {
+  background-color: $bg-primary;
+}
+
+.faq__accordion-item--open button::after {
+  background-color: $bg-base;
+  mask: url("/__spritemap#sprite-accordion-minus-view") center / 14px 14px no-repeat;
+
+  @media (min-width: $tablet-width) {
+    right: 10px;
+    mask: url("/__spritemap#sprite-accordion-minus-view") center / 20px 20px no-repeat;
+  }
+}
+
+.faq__accordion-item--open button {
+  @media (min-width: $tablet-width) {
+    margin: 23px 0 10px;
   }
 }
 
 .faq__accordion-item p {
-  display: none;
+  max-height: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  transition:
+    max-height 0.2s ease-out,
+    margin 0.2s ease-out;
 }
 
-.faq__accordion-item button[aria-expanded="true"] + p {
-  display: block;
+.faq__accordion-item--open p {
+  max-height: 1000px;
   margin: 0 0 20px;
-  padding: 0;
   width: 240px;
   font-size: 16px;
   line-height: 20px;
+  transition:
+    max-height 0.4s ease-in,
+    margin 0.4s ease-in;
+
+  @media (min-width: $tablet-width) {
+    width: 560px;
+    margin: 0 0 23px;
+    font-size: 18px;
+    line-height: 24px;
+  }
 }

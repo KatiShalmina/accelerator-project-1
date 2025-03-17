@@ -1,3 +1,18 @@
+.slider-review {
+  @media (min-width: $tablet-width) {
+    position: relative;
+    text-align: left;
+  }
+}
+
+.slider-review__wrapper {
+  @media (min-width: $tablet-width) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
 .slider-review__slide {
   padding: 30px 25px;
   color: $color-primary;
@@ -16,5 +31,98 @@
     margin: 0 0 16px;
     font-size: 18px;
     line-height: 20px;
+  }
+
+  @media (min-width: $tablet-width) {
+    display: grid;
+    grid-template-columns: 80px auto;
+    gap: 40px;
+    width: 500px;
+    padding: 40px 30px;
+
+    img {
+      width: 80px;
+      height: 80px;
+    }
+
+    h3 {
+      margin: 0 0 20px;
+      font-size: 22px;
+      line-height: 22px;
+    }
+  }
+}
+
+.slider-review__button {
+  display: none;
+
+  @media (min-width: $tablet-width) {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    width: 50px;
+    height: 50px;
+    color: $color-base;
+    border: 1px solid transparent;
+    border-radius: 50px;
+    cursor: pointer;
+    transition:
+      color 0.4s ease,
+      background-color 0.4s ease,
+      border 0.4s ease;
+
+    &:hover,
+    &:focus-visible {
+      border-color: $color-base;
+    }
+
+    &:focus-visible {
+      background-color: #e8e8e8;
+    }
+
+    &:active {
+      color: $color-primary;
+      background-color: $color-base;
+    }
+
+    &:disabled {
+      opacity: 0.1;
+    }
+  }
+}
+
+.slider-review__button--prev {
+  @media (min-width: $tablet-width) {
+    left: 0;
+  }
+}
+
+.slider-review__button--next {
+  @media (min-width: $tablet-width) {
+    right: 0;
+  }
+}
+
+.slider-review__button svg {
+  @media (min-width: $tablet-width) {
+    position: absolute;
+    display: block;
+  }
+}
+
+.slider-review__button--prev svg {
+  @media (min-width: $tablet-width) {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.slider-review__button--next svg {
+  @media (min-width: $tablet-width) {
+    right: 17px;
+    top: 50%;
+    transform: translateY(-50%);
   }
 }
