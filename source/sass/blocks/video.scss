@@ -2,6 +2,7 @@
   position: relative;
   width: 320px;
   height: 170px;
+  background-color: #8a9bbd;
   background-image:
     linear-gradient(rgba(20, 54, 122, 0.5), rgba(20, 54, 122, 0.5)),
     image-set(
@@ -16,6 +17,11 @@
 
   @media (min-width: $tablet-width) {
     width: 270px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 360px;
+    height: 230px;
   }
 }
 
@@ -36,30 +42,39 @@
   cursor: pointer;
   transition:
     background-color 0.4s ease,
-    width 0.2s ease,
-    heght 0.2s ease,
     outline-offset 0.4s ease,
+    transform 0.4s ease,
     outline-color 0.4s ease;
 
-  &:hover {
-    background-image: none;
-    background-color: $bg-base;
-    outline-color: rgba(16, 38, 84, 0.6);
-  }
+  @media (min-width: $tablet-width) {
+    &:hover {
+      background-image: none;
+      background-color: $bg-base;
+      outline-color: rgba(16, 38, 84, 0.6);
+    }
 
-  &:focus-visible {
-    background-image: none;
-    background-color: #c8c9cc;
-    outline-color: $color-base;
+    &:focus-visible {
+      background-image: none;
+      background-color: #c8c9cc;
+      outline-color: $color-base;
+    }
+
+    &:hover::after {
+      background-color: rgba(16, 38, 84, 0.6);
+    }
+
+    &:focus-visible::after {
+      background-color: $color-base;
+    }
   }
 
   &:active {
-    width: 41px;
-    height: 41px;
+    background-color: $bg-base;
     background-image: none;
-    transform-origin: center;
     outline-color: $color-base;
     outline-offset: 14px;
+    transform: translate(-50%, -50%) scale(0.79);
+    transform-origin: center;
   }
 
   &:disabled {
@@ -79,18 +94,24 @@
     transition: background-color 0.4s ease;
   }
 
-  &:hover::after {
-    background-color: rgba(16, 38, 84, 0.6);
-  }
-
-  &:focus-visible::after,
   &:active::after {
-    mask-position: center;
     background-color: $color-base;
   }
 
   &:disabled::after {
     background-color: rgba(16, 38, 84, 0.4);
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 72px;
+    height: 72px;
+    outline-offset: 13px;
+
+    &::after {
+      width: 72px;
+      height: 72px;
+      mask: url("/__spritemap#sprite-video-icon-view") center / 17px 17px no-repeat;
+    }
   }
 }
 
@@ -98,7 +119,6 @@
   width: 100%;
   height: 100%;
 }
-
 
 .video__container iframe {
   width: 100%;

@@ -1,17 +1,21 @@
 .offers__wrapper {
-  margin: 40px auto 10px;
+  padding: 40px 0 10px;
   text-align: center;
 
   @media (min-width: $tablet-width) {
     margin: 0 auto;
     padding: 60px 45px;
   }
+
+  @media (min-width: $desktop-width) {
+    padding: 100px 103px;
+  }
 }
 
 .offers__title {
   @include secondary-font;
 
-  margin: 0 0 40px;
+  margin: 0 0 39px;
   font-size: 32px;
   line-height: 32px;
 
@@ -19,6 +23,21 @@
     margin: 0 0 35px;
     font-size: 42px;
     line-height: 42px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin: 0 0 70px;
+    font-size: 54px;
+    line-height: 54px;
+  }
+}
+
+.offers__content-wrapper {
+  @media (min-width: $desktop-width) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: flex-end;
   }
 }
 
@@ -31,11 +50,15 @@
     gap: 30px;
     padding: 0;
   }
+
+  @media (min-width: $desktop-width) {
+    flex-direction: column;
+  }
 }
 
 .offers__unit {
   margin: 0 0 30px;
-  padding: 20px;
+  padding: 20px 20px 21px;
   border: 7px solid transparent;
   border-image: $button-gradient;
   border-image-slice: 1;
@@ -68,6 +91,14 @@
 
     p {
       margin: 0 0 25px;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 560px;
+
+    p {
+      margin: 0 0 35px;
     }
   }
 }
@@ -123,28 +154,44 @@
     }
 
     p {
-      margin: 0;
       font-size: 18px;
       line-height: 24px;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 560px;
+    margin: 0;
+
+    span {
+      font-size: 26px;
+      line-height: 26px;
     }
   }
 }
 
 .offers__text-wrapper--highlight {
-  padding: 30px;
+  padding: 30px 30px 31px;
 
   @media (min-width: $tablet-width) {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     width: 278px;
     padding: 40px 25px;
     text-align: left;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 280px;
+    padding: 40px 45px;
   }
 }
 
 .offers__button {
   @include primary-700;
 
+  position: relative;
   display: block;
   width: max-content;
   margin: 0 auto;
@@ -153,35 +200,62 @@
   color: $bg-primary;
   text-transform: uppercase;
   text-decoration: none;
-  border-bottom: 1px solid #74819c;
   cursor: pointer;
   transition:
+    padding 0.4s ease,
     opacity 0.4s ease,
     border 0.4s ease,
     outline 0.4s ease;
 
-  &:hover {
-    opacity: 0.8;
-  }
+  @media (min-width: $tablet-width) {
+    padding: 5px;
+    margin: auto auto 0 -5px;
+    font-size: 14px;
 
-  &:focus-visible {
-    border: none;
-    outline: 1px solid $bg-primary;
-    outline-offset: 5px;
-  }
+    &:hover {
+      opacity: 0.8;
+    }
 
-  &:active {
-    border-color: $bg-primary;
-    opacity: 1;
+    &:focus-visible {
+      outline: 1px solid $bg-primary;
+      outline-offset: 5px;
+    }
+
+    &:active {
+      opacity: 1;
+    }
+
+    &:hover::after {
+      background-color: rgba(28, 51, 116, 0.8);
+    }
+
+    &:focus-visible::after {
+      display: none;
+    }
+
+    &:active::after {
+      background-color: $bg-primary;
+    }
   }
 
   &:disabled {
     opacity: 0.3;
   }
 
-  @media (min-width: $tablet-width) {
-    margin: auto auto 0 0;
-    font-size: 14px;
+  &::after {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    content: "";
+    height: 1px;
+    background-color: #74819c;
+    transition: background-color 0.4s ease;
+
+    @media (min-width: $tablet-width) {
+      left: 5px;
+      right: 5px;
+    }
   }
 }
 
@@ -189,11 +263,17 @@
   color: $color-primary;
   border-color: $bg-base;
 
-  &:focus-visible {
-    outline-color: $bg-base;
+  @media (min-width: $tablet-width) {
+    &:focus-visible {
+      outline-color: $bg-base;
+    }
+
+    &:hover::after {
+      background-color: $bg-base;
+    }
   }
 
-  &:active {
-    border-color: $bg-base;
+  &::after {
+    background-color: $bg-base;
   }
 }

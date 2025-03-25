@@ -1,88 +1,101 @@
 .slider-jury {
+  overflow: hidden;
+
   @media (min-width: $tablet-width) {
     position: relative;
   }
 }
 
-.slider-jury__wrapper {
+.slider-jury .swiper-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  transition: transform 0.4s ease;
+  overflow: hidden;
+
   @media (min-width: $tablet-width) {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0 40px;
     width: 560px;
     margin: 0 auto;
   }
+
+  @media (min-width: $desktop-width) {
+    width: 1160px;
+  }
 }
 
-.slider-jury__slide {
-  width: 260px;
-  height: 300px;
+.slider-jury .swiper-slide {
+  position: relative;
+  max-width: 260px;
+  max-height: 300px;
   color: $color-primary;
   background-color: $bg-primary;
+  overflow: hidden;
 
   img {
     display: block;
   }
 
   @media (min-width: $tablet-width) {
-    position: relative;
+    cursor: pointer;
+    width: 100%;
   }
 }
 
 .slider-jury__title {
-  display: none;
+  @include primary-400;
 
-  @media (min-width: $tablet-width) {
-    @include primary-400;
-
-    position: absolute;
-    display: block;
-    left: 50%;
-    bottom: 25px;
-    transform: translateX(-50%);
-    width: 240px;
-    margin: 0;
-    font-size: 22px;
-    line-height: 22px;
-  }
+  position: absolute;
+  display: block;
+  left: 50%;
+  bottom: 25px;
+  transform: translateX(-50%);
+  width: 240px;
+  margin: 0;
+  font-size: 22px;
+  line-height: 22px;
+  color: $color-primary;
 }
 
 .slider-jury__button {
-  display: none;
+  @media (max-width: $mobile-width-only) {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
 
-  @media (min-width: $tablet-width) {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    display: block;
-    width: 50px;
-    height: 50px;
-    color: $color-base;
-    border: 1px solid transparent;
-    border-radius: 50px;
-    cursor: pointer;
-    transition:
-      color 0.4s ease,
-      background-color 0.4s ease,
-      border 0.4s ease;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 4;
+  display: block;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  color: $color-base;
+  background-color: none;
+  border: 1px solid transparent;
+  border-radius: 50px;
+  cursor: pointer;
+  transition:
+    color 0.4s ease,
+    background-color 0.4s ease,
+    border 0.4s ease;
 
-    &:hover,
-    &:focus-visible {
-      border-color: $color-base;
-    }
+  &:hover,
+  &:focus-visible {
+    border-color: $color-base;
+  }
 
-    &:focus-visible {
-      background-color: #e8e8e8;
-    }
+  &:focus-visible {
+    background-color: #e8e8e8;
+  }
 
-    &:active {
-      color: $color-primary;
-      background-color: $color-base;
-    }
+  &:active {
+    color: $color-primary;
+    background-color: $color-base;
+  }
 
-    &:disabled {
-      opacity: 0.1;
-    }
+  &:disabled {
+    opacity: 0.1;
   }
 }
 
@@ -118,5 +131,62 @@
     right: 17px;
     top: 50%;
     transform: translateY(-50%);
+  }
+}
+
+.slider-jury .overlay {
+  display: none;
+
+  @media (min-width: $tablet-width) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 260px;
+    height: 300px;
+    display: block;
+    text-align: left;
+    padding: 46px 40px 40px;
+    font-size: 14px;
+    line-height: 22px;
+    color: $color-primary;
+    background: rgba(16, 38, 84, 0.89);
+    box-shadow: 0 0 35px 0 rgba(42, 59, 99, 0.17);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+
+    h3 {
+      @include primary-400;
+
+      margin: 0 0 8px;
+      font-size: 22px;
+      line-height: 22px;
+      text-align: center;
+    }
+
+    p {
+      margin: 0 0 34px;
+      font-size: 16px;
+      line-height: 24px;
+      text-align: center;
+    }
+
+    ul {
+      list-style-type: disc;
+    }
+
+    li {
+      @include primary-400;
+
+      margin: 0 0 12px;
+      padding: 0;
+      font-size: 14px;
+      line-height: 22px;
+      align-items: start;
+    }
+
+    &:hover,
+    &:focus-visible {
+      opacity: 1;
+    }
   }
 }

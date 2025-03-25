@@ -3,16 +3,19 @@
   background-color: $bg-secondary;
 
   @media (min-width: $tablet-width) {
-    position: relative;
+    display: grid;
+    grid-template-columns: auto 380px auto;
     overflow: hidden;
 
     &::after {
-      position: absolute;
-      right: -14px;
-      bottom: 10px;
+      grid-column: 2 / 4;
+      grid-row: 1 / 2;
+      align-self: end;
+      justify-self: end;
       content: "";
       width: 275px;
       height: 328px;
+      margin: 10px -14px 15px;
       background-image:
         image-set(
           url("../../img/price-back@1x.webp") type("image/webp") 1x,
@@ -23,8 +26,17 @@
       background-repeat: no-repeat;
       background-size: contain;
       transform: rotate(-210deg);
-      transform-origin: center;
+
+      @media (min-width: $desktop-width) {
+        width: 321px;
+        height: 384px;
+        margin: 8px -93px;
+      }
     }
+  }
+
+  @media (min-width: $desktop-width) {
+    grid-template-columns: auto 1160px auto;
   }
 }
 
@@ -32,8 +44,16 @@
   padding: 40px 15px;
 
   @media (min-width: $tablet-width) {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    z-index: 1;
     width: 380px;
     padding: 60px 0;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 1160px;
+    padding: 100px 0;
   }
 }
 
@@ -48,5 +68,11 @@
     margin: 0 0 25px;
     font-size: 42px;
     line-height: 42px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin: 0 0 10px;
+    font-size: 54px;
+    line-height: 54px;
   }
 }

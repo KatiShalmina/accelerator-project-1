@@ -12,6 +12,10 @@
     justify-content: space-between;
     padding: 45px;
   }
+
+  @media (min-width: $desktop-width) {
+    padding: 40px 103px;
+  }
 }
 
 .footer__logo {
@@ -25,12 +29,16 @@
 .footer__nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px 35px;
-  margin: 0 0 30px;
+  gap: 18px 35px;
+  margin: 0 0 28px;
 
   @media (min-width: $tablet-width) {
     gap: 20px 30px;
     margin: 0;
+  }
+
+  @media (min-width: $desktop-width) {
+    gap: 20px 83px;
   }
 }
 
@@ -41,15 +49,6 @@
   color: $color-primary;
   text-decoration: none;
 
-  &:focus-visible {
-    outline: 1px solid $bg-base;
-    outline-offset: 5px;
-  }
-
-  &:hover::after {
-    background-color: $bg-base;
-  }
-
   &:disabled {
     opacity: 0.3;
   }
@@ -57,6 +56,15 @@
   @media (min-width: $tablet-width) {
     font-size: 14px;
     line-height: 22px;
+
+    &:focus-visible {
+      outline: 1px solid $bg-base;
+      outline-offset: 5px;
+    }
+
+    &:hover::after {
+      background-color: $bg-base;
+    }
   }
 }
 
