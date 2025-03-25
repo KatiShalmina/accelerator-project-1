@@ -1,7 +1,7 @@
-// https://swiperjs.com/get-started#installation
-// import Swiper from "swiper";
-// import {Navigation, Pagination} from "swiper/modules";
-// import 'swiper/css';
+import Swiper from 'swiper';
+import { Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
 
 const scrollButton = document.querySelector('.hero__button');
 const priceSection = document.querySelector('.price');
@@ -10,7 +10,7 @@ const cardLists = document.querySelectorAll('.tabs__card-list');
 const accordionTabs = document.querySelectorAll('.faq__tab-button');
 const accordionLists = document.querySelectorAll('.faq__accordion-list');
 const accordions = document.querySelectorAll('.faq__accordion-item button');
-const accordionItems = document.querySelectorAll('.faq__accordion-item');
+const form = document.querySelector('.request__form-wrapper form');
 
 // scrollButton
 scrollButton.addEventListener('click', () => {
@@ -85,10 +85,15 @@ function toggleAccordion(button) {
   const content = item.querySelector('p');
 
   if (item.classList.contains('faq__accordion-item--open')) {
-    content.style.maxHeight = null;
+    content.style.maxHeight = '0';
     item.classList.remove('faq__accordion-item--open');
   } else {
-    content.style.maxHeight = `${content.scrollHeight }px`;
+    content.style.maxHeight = 'none';
+    requestAnimationFrame(() => {
+      const height = content.scrollHeight;
+      content.style.maxHeight = `${height}px`;
+    });
+
     item.classList.add('faq__accordion-item--open');
   }
 
@@ -99,6 +104,14 @@ function toggleAccordion(button) {
 
   saveAccordionState();
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.faq__accordion-item--open p').forEach((content) => {
+    requestAnimationFrame(() => {
+      content.style.maxHeight = `${content.scrollHeight}px`;
+    });
+  });
+});
 
 accordions.forEach((button) => {
   button.addEventListener('click', () => {
@@ -117,31 +130,202 @@ function saveAccordionState() {
       state[tabName][index] = item.classList.contains('faq__accordion-item--open');
     });
   });
-
-  sessionStorage.setItem('faqState', JSON.stringify(state));
 }
 
-function restoreAccordionState(tabName) {
-  const savedState = sessionStorage.getItem('faqState');
-  if (!savedState) {
-    return;
+// form:invalid
+form.addEventListener('submit', (event) => {
+  if (!form.checkValidity()) {
+    event.preventDefault();
+    form.classList.add('was-validated');
   }
+});
 
-  const state = JSON.parse(sessionStorage.getItem('faqState'));
-  if (!state || !state[tabName]) {
-    return;
-  }
+// jury-slider
+document.addEventListener('DOMContentLoaded', () => {
+  const jurySlider = new Swiper('.jury__slider', {
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 40,
+    navigation: {
+      nextEl: '.slider-jury__button--next',
+      prevEl: '.slider-jury__button--prev',
+    },
+    allowTouchMove: true,
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+        allowTouchMove: false,
+      },
+      1366: {
+        slidesPerView: 4,
+        allowTouchMove: false,
+      },
+    },
+  });
+});
 
-  const content = document.querySelector(`.faq__accordion-list[data-tab="${tabName}"]`);
-  if (!content) {
-    return;
-  }
+// slider-jury__slide:hover
+document.addEventListener('DOMContentLoaded', () => {
+  const juryData = [
+    {
+      id: 1,
+      name: 'Aнна Павлова',
+      position: 'CrossFit',
+      achievements: [
+        'Certified Level 1 Trainer',
+        'Победитель чемпионата Казахстана по CrossFit',
+        'Опыт — 8 лет'
+      ],
+    },
+    {
+      id: 2,
+      name: 'Алексей Лавров',
+      position: 'CrossFit',
+      achievements: [
+        'Certified Level 2 Trainer',
+        'Победитель чемпионата Камчатки по CrossFit',
+        'Опыт — 4 года'
+      ],
+    },
+    {
+      id: 3,
+      name: 'Александр Пашков',
+      position: 'CrossFit',
+      achievements: [
+        'Certified Level 3 Trainer',
+        'Победитель чемпионата России по CrossFit',
+        'Опыт — 6 лет'
+      ],
+    },
+    {
+      id: 4,
+      name: 'Мария Кетова',
+      position: 'CrossFit',
+      achievements: [
+        'Certified Level 4 Trainer',
+        'Победитель чемпионата Астрахани по CrossFit',
+        'Опыт — 7 лет'
+      ],
+    },
+    {
+      id: 5,
+      name: 'София Михайлова',
+      position: 'CrossFit',
+      achievements: [
+        'Certified Level 5 Trainer',
+        'Победитель чемпионата Геленджика по CrossFit',
+        'Опыт — 11 лет'
+      ],
+    },
+    {
+      id: 6,
+      name: 'Сергей Бедный',
+      position: 'CrossFit',
+      achievements: [
+        'Certified Level 3 Trainer',
+        'Победитель чемпионата Керчи по CrossFit',
+        'Опыт — 3 года'
+      ],
+    },
+    {
+      id: 7,
+      name: 'Юрий Марков',
+      position: 'CrossFit',
+      achievements: [
+        'Certified Level 7 Trainer',
+        'Победитель чемпионата Удмуртии по CrossFit',
+        'Опыт — 2 года'
+      ],
+    },
+    {
+      id: 8,
+      name: 'Надежда Беляева',
+      position: 'CrossFit',
+      achievements: [
+        'Certified Level 2 Trainer',
+        'Победитель чемпионата Чувашии по CrossFit',
+        'Опыт — 9 лет'
+      ],
+    }
+  ];
 
-  content.querySelectorAll('.faq__accordion-item').forEach((item, index) => {
-    if (state[tabName][index]) {
-      item.classList.add('faq__accordion-item--open');
-    } else {
-      item.classList.remove('faq__accordion-item--open');
+  const addTrainerInfo = (slide, trainer) => {
+    const overlay = document.createElement('div');
+    overlay.classList.add('overlay');
+
+    const name = document.createElement('h3');
+    name.innerText = trainer.name;
+    overlay.appendChild(name);
+
+    const position = document.createElement('p');
+    position.classList.add('position');
+    position.innerText = trainer.position;
+    overlay.appendChild(position);
+
+    const achievements = document.createElement('ul');
+    achievements.classList.add('achievements');
+    trainer.achievements.forEach((achievement) => {
+      const li = document.createElement('li');
+      li.innerText = achievement;
+      achievements.appendChild(li);
+    });
+    overlay.appendChild(achievements);
+
+    slide.appendChild(overlay);
+  };
+
+  const slides = document.querySelectorAll('.slider-jury__slide');
+  slides.forEach((slide) => {
+    const trainerId = slide.getAttribute('data-trainer');
+    const trainerData = juryData.find((trainer) => trainer.id === trainerId);
+
+    if (trainerData) {
+      addTrainerInfo(slide, trainerData);
     }
   });
-}
+});
+
+// slider-review
+document.addEventListener('DOMContentLoaded', () => {
+  const reviewSlider = new Swiper('.reviews__slider', {
+    loop: false,
+    slidesPerView: 1,
+    spaceBetween: 40,
+    navigation: {
+      nextEl: '.slider-review__button--next',
+      prevEl: '.slider-review__button--prev',
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 1,
+        spaceBetween: 40,
+      },
+      1366: {
+        slidesPerView: 1,
+        spaceBetween: 40,
+      },
+    },
+    on: {
+      init: function () {
+        const nextButton = document.querySelector('.slider-review__button--next');
+        const prevButton = document.querySelector('.slider-review__button--prev');
+
+        prevButton.classList.add('swiper-button-disabled');
+
+        this.on('slideChange', () => {
+          if (this.isBeginning) {
+            prevButton.classList.add('swiper-button-disabled');
+          } else {
+            prevButton.classList.remove('swiper-button-disabled');
+          }
+
+          if (this.isEnd) {
+            nextButton.classList.add('swiper-button-disabled');
+          } else {
+            nextButton.classList.remove('swiper-button-disabled');
+          }
+        });
+      },
+    },
+  });
+});

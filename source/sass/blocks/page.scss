@@ -23,3 +23,12 @@
 .page__body main {
   flex-grow: 1;
 }
+
+.page__body .request-contacts-wrapper {
+  @media (min-width: $desktop-width) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: $desktop-width;
+    margin: 0 auto;
+  }
+}

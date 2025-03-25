@@ -11,6 +11,11 @@
     width: 310px;
     margin: 0 auto 45px;
   }
+
+  @media (min-width: $desktop-width) {
+    width: 350px;
+    margin: 0 auto 40px;
+  }
 }
 
 .tabs__button {
@@ -29,35 +34,35 @@
   @media (min-width: $tablet-width) {
     font-size: 18px;
     line-height: 18px;
-  }
 
-  &:hover {
-    color: rgba(16, 38, 84, 0.7);
-  }
+    &:hover {
+      color: rgba(16, 38, 84, 0.7);
+    }
 
-  &:focus-visible,
-  &:active {
-    color: $color-base;
+    &:focus-visible {
+      color: $color-base;
+    }
+
+    &:hover::after {
+      background-color: #787878;
+    }
+
+    &:focus-visible::after {
+      background-color: $color-base;
+    }
   }
 
   &:disabled {
     color: rgba(16, 38, 84, 0.3);
   }
 
-  &:hover::after {
-    background-color: #787878;
-  }
-
-  &:focus-visible::after {
-    background-color: $color-base;
-  }
-
-  &:active::after {
-    background-color: #ed0233;
-  }
-
   &:disabled::after {
     background-color: rgba(16, 38, 84, 0.3);
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: 20px;
+    line-height: 20px;
   }
 }
 
@@ -86,6 +91,15 @@
   @include reset-list;
 
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
-  gap: 32px;
+  gap: 35px;
+
+  @media (min-width: $tablet-width) {
+    gap: 40px;
+  }
+
+  @media (min-width: $desktop-width) {
+    flex-direction: row;
+  }
 }

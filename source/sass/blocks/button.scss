@@ -15,14 +15,16 @@
     color 0.4s ease,
     background-color 0.4s ease;
 
-  &:hover {
-    color: $color-secondary;
-    background-color: $bg-base;
-  }
+  @media (min-width: $tablet-width) {
+    &:hover {
+      color: $color-secondary;
+      background-color: $bg-base;
+    }
 
-  &:focus-visible {
-    color: $color-secondary;
-    background-color: rgba(255, 255, 255, 0.8);
+    &:focus-visible {
+      color: $color-secondary;
+      background-color: rgba(255, 255, 255, 0.8);
+    }
   }
 
   &:active {
@@ -62,10 +64,6 @@
       background-color: #003eb7;
       background-image: linear-gradient(97.05deg, rgba(237, 2, 51, 0.8) 17.6%, rgba(0, 62, 183, 0.8) 95.31%);
     }
-
-    &:active {
-      padding: 27px 10px;
-    }
   }
 
   &:active {
@@ -87,7 +85,6 @@
 .button--secondary {
   @include primary-400;
 
-  width: 140px;
   padding: 14px 10px;
   font-size: 16px;
   line-height: 16px;
@@ -99,31 +96,23 @@
     padding 0.4 ease,
     border 0.4s ease;
 
-  &:hover,
-  &:focus-visible {
-    color: $color-base;
-    background-color: transparent;
-    border-color: $color-base;
-  }
+  @media (min-width: $tablet-width) {
+    padding: 18px 10px;
+    font-size: 18px;
+    line-height: 18px;
 
-  &:active {
-    padding: 15px 10px;
-    color: $color-primary;
-    background-color: $bg-primary;
-    background-image: linear-gradient(97.05deg, #ed0233 17.6%, #003eb7 95.31%);
-    border: none;
+    &:hover,
+    &:focus-visible {
+      color: $color-base;
+      background-color: transparent;
+      border-color: $color-base;
+    }
   }
 
   &:disabled {
     color: #c8c9cc;
     border-color: rgba(16, 38, 84, 0.2);
     pointer-events: none;
-  }
-
-  @media (min-width: $tablet-width) {
-    width: 162px;
-    font-size: 18px;
-    line-height: 18px;
   }
 }
 
