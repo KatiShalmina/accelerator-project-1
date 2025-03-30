@@ -97,7 +97,7 @@
     border 0.4s ease;
 
   @media (min-width: $tablet-width) {
-    padding: 18px 10px;
+    padding: 17px 10px;
     font-size: 18px;
     line-height: 18px;
 
@@ -114,11 +114,4 @@
     border-color: rgba(16, 38, 84, 0.2);
     pointer-events: none;
   }
-}
-
-.button--secondary.no-hover:hover {
-  color: $color-primary;
-  background-color: $bg-primary;
-  background-image: linear-gradient(97.05deg, #ed0233 17.6%, #003eb7 95.31%);
-  border: none;
 }
