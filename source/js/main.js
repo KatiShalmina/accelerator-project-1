@@ -1,5 +1,5 @@
 import Swiper from 'swiper';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
@@ -85,7 +85,7 @@ function toggleAccordion(button) {
   const content = item.querySelector('p');
 
   if (item.classList.contains('faq__accordion-item--open')) {
-    content.style.maxHeight = '0';
+    content.style.maxHeight = null;
     item.classList.remove('faq__accordion-item--open');
   } else {
     content.style.maxHeight = 'none';
